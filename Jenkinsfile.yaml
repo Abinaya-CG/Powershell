@@ -1,10 +1,15 @@
-pipeline:
-  agent:
-    any: 
-  stages: 
-    - stage: "version"
-      steps:
-        powershell('Write-Host "Hello"')
-    - stage: "hello"
-      steps: 
+pipeline {
+  agent any
+  stages {
+    stage('version') {
+      steps {
+        sh 'pwsh --version'
+      }
+    }
+    stage('hello') {
+      steps {
         sh 'pwsh hello.ps1'
+      }
+    }
+  }
+}
