@@ -1,8 +1,8 @@
 /usr/bin/pwsh
 $user = "Administrator"
-$pass= "-IYQINoaR*L3KW$cg4t!GWaECAW9ukXu"
+$pass= "RhRg(tqdyp5T@!p!EZM(uOJl&B35.su9"
 $secpasswd = ConvertTo-SecureString $pass -AsPlainText -Force
 $cred = New-Object System.Management.Automation.PSCredential($user, $secpasswd)
-$session = new-pssession 44.204.6.171 -p 80 -credential $cred 
+$session = new-pssession ec2-35-89-57-61.us-west-2.compute.amazonaws.com -credential $cred 
 enter-pssession $session  
 Write-Host "Hello, World (from $env:COMPUTERNAME)"
