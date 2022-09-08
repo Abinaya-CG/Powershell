@@ -10,6 +10,11 @@ pipeline {
       steps {
         sh 'pwsh hello.ps1'
       }
+    postBuild{
+      always{
+        sh 'pwsh --version'
+      }
+    }
     }
   }
 }
