@@ -8,9 +8,12 @@ pipeline {
     stage('version') {
       steps {
         powershell '$PSVersionTable.PSVersion'
-        def excelFormat = CSVFormat.EXCEL
-        def records = readCSV file: 'optim_mapping.csv', format: excelFormat
-        echo records
+        
+        script{
+          def excelFormat = CSVFormat.EXCEL
+          def records = readCSV file: 'optim_mapping.csv', format: excelFormat
+          echo records
+        }
       }
     }
     stage('hello') {
