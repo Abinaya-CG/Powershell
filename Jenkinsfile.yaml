@@ -11,7 +11,7 @@ pipeline {
         
         script{
           def file = readFile "optim_mapping.csv"
-          def rows = file.readLines().tail().split(',')
+          def rows = file.readLines()
           int total = rows.size()
           Set Apps = rows.collect { it[1] + ' ' + it[2] }
           Set Jobname = rows.getAt(3)
