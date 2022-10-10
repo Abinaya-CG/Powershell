@@ -10,8 +10,8 @@ pipeline {
         powershell '$PSVersionTable.PSVersion'
         
         script{
-          def excelFormat = CSVFormat.EXCEL
-          def records = readCSV file: 'optim_mapping.csv', format: excelFormat
+          def csvfile = [file(name: 'optim_mapping.csv']
+          def records = readFile "${csvfile}"
           echo records
         }
       }
