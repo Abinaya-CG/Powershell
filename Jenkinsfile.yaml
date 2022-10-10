@@ -16,9 +16,4 @@ pipeline {
       }
     }
   }
-  post{
-      always{
-        sh 'pwsh --version'
-      }
-   }
 }
