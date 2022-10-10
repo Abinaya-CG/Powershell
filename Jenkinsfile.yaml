@@ -10,7 +10,7 @@ pipeline {
         powershell '$PSVersionTable.PSVersion'
         
         script{
-          def file = new File('optim_mapping.csv')
+          def file = readFile "optim_mapping.csv"
           def rows = file.readLines().tail().split(',')
           int total = rows.size()
           Set Apps = rows.collect { it[1] + ' ' + it[2] }
