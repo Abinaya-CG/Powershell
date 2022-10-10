@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('version') {
       steps {
-        sh 'powershell $PSVersionTable.PSVersion'
+        powershell $PSVersionTable.PSVersion
       }
     }
     stage('hello') {
