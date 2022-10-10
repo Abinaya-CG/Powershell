@@ -12,7 +12,7 @@ pipeline {
     }
     stage('hello') {
       steps {
-        powershell 'Wrote-Output "HI!!"'
+        powershell 'Write-Output "HI!!"'
       }
     }
   }
