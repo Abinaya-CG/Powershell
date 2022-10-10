@@ -2,6 +2,10 @@ pipeline {
   agent {
   node("optim") {
     timeout(unit: 'SECONDS', time: 5) {
+    echo "AGENT- WINDOWS OPTIM"
+    }
+   }
+  }
   stages {
     stage('version') {
       steps {
@@ -19,7 +23,4 @@ pipeline {
         sh 'pwsh --version'
       }
    }
-   }
- }
- }
 }
