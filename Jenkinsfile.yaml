@@ -10,11 +10,14 @@ pipeline {
         powershell '$PSVersionTable.PSVersion'
         
         script{
-          def records = readFile "optim_mapping.csv"
-          assert records[0][0][0] == 'Application'
-          assert records[0][1][0] == 'Server'
-          assert records[0][0][1] == 'Schema'
-          echo records
+          def file = new File('optim_mapping.csv')
+          def rows = file.readLines().tail()*.split(',')
+          int total = rows.size()
+          Set Apps = rows.collect { it[1] + ' ' + it[2] }
+          Set Jobname = rows*.getAt(3)
+          Set Scriptpath = rows*.getAt(4)
+          String result = "Across $total stages, ${Apps.size()} riders from " + "${Jobname.size()} teams and ${Scriptpath.size()} countries won stages."
+          echo $result
         }
       }
     }
