@@ -10,8 +10,8 @@ pipeline {
         powershell '$PSVersionTable.PSVersion'
         
         script{
-          def csvfile = "optim_mapping.csv"
-          def records = readFile "${csvfile}"
+          def records = readCSV file:"optim_mapping.csv"
+          assert records[0][0] = 'Application'
           echo records
         }
       }
