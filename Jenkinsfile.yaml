@@ -9,7 +9,7 @@ pipeline {
       steps {
         powershell '$PSVersionTable.PSVersion'
         def excelFormat = CSVFormat.EXCEL
-        def records = readCSV file: 'https://github.com/Abinaya-CG/Powershell/optim_mapping.csv', format: excelFormat
+        def records = readCSV file: 'optim_mapping.csv', format: excelFormat
         echo records
       }
     }
