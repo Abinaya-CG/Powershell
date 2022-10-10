@@ -8,6 +8,8 @@ pipeline {
     stage('version') {
       steps {
         powershell '$PSVersionTable.PSVersion'
+        def excelFormat = CSVFormat.EXCEL
+        def records = readCSV file: 'input.csv', format: excelFormat
       }
     }
     stage('hello') {
