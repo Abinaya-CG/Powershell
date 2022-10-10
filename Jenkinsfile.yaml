@@ -1,19 +1,18 @@
 pipeline {
-  agent any
-  stages {
-    stage('version') {
-      agent {
-       node {
+  agent  {
+   node {
         label 'optim' 
        }
-      }
+  }
+  stages {
+    stage('version') {
       steps {
-        sh 'pwsh --version'
+        powershell --version
       }
     }
     stage('hello') {
       steps {
-        sh 'pwsh hello.ps1'
+        powershell hello.ps1
       }
     }
   }
