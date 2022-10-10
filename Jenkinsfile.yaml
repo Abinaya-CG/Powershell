@@ -12,6 +12,7 @@ pipeline {
     }
     stage('hello') {
       steps {
+        powershell(".,'C:\Users\Administrator\Documents\Plutora\optim.ps1'")
       }
     }
   }
