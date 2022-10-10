@@ -1,8 +1,7 @@
 pipeline {
   agent {
   node {
-    label 'optim'
-    echo "AGENT- WINDOWS OPTIM"
+    label 'optim' 
    }
   }
   stages {
