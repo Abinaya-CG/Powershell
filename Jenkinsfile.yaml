@@ -10,7 +10,7 @@ pipeline {
         powershell '$PSVersionTable.PSVersion'
         
         script{
-          def records = readFile:"optim_mapping.csv"
+          def records = readFile "optim_mapping.csv"
           assert records[0][0][0] == 'Application'
           assert records[0][1][0] == 'Server'
           assert records[0][0][1] == 'Schema'
