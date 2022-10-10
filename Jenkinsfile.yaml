@@ -1,5 +1,5 @@
 pipeline {
-  agent 
+  agent {
   node("optim") {
     timeout(unit: 'SECONDS', time: 5) {
   stages {
@@ -19,6 +19,7 @@ pipeline {
         sh 'pwsh --version'
       }
    }
-  }
+   }
+ }
  }
 }
