@@ -1,12 +1,13 @@
 pipeline {
-  agent {
-  node {
-    label 'optim' 
-   }
-  }
+  agent any
   stages {
     stage('version') {
       steps {
+      agent{
+       node {
+        label 'optim' 
+       }
+      }
         sh 'pwsh --version'
       }
     }
