@@ -11,7 +11,7 @@ pipeline {
         
         script{
           def records = readCSV file:"optim_mapping.csv"
-          assert records[0][0] = 'Application'
+          assert records[0][0] == 'Application'
           echo records
         }
       }
