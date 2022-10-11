@@ -18,6 +18,14 @@ pipeline {
              headers = row.tokenize(",")
              echo "$headers"
            }
+           else {
+             def tmpMap = [:]
+             def cells = row.split(',').eachWithIndex { cell, cellIndex ->
+             tmpMap[headers[cellIndex]] = cell
+           }
+           mapList.add(tmpMap)
+           }
+          echo "$maplist"
            
            }
         }
