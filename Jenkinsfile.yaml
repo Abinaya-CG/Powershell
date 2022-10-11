@@ -13,7 +13,7 @@ pipeline {
           def file = readFile "optim_mapping.csv"
           def rows = file.readLines()
           int total = rows.size()
-          echo $total
+          echo "$total"
         }
       }
     }
