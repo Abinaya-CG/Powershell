@@ -11,11 +11,10 @@ pipeline {
         
         script{
           def mapList=[]
-          def headers=[]
           def file = readFile "optim_mapping.csv"
           file.readLines().eachWithIndex { row, index ->
            if (index == 0) { 
-             headers = row.split(',')
+             def headers = row.split(',')
            }
            
            }
