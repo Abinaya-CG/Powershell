@@ -26,6 +26,7 @@ pipeline {
             i=i+1
           }
           echo "$total"
+          echo "$array[1]"
         }
       }
     }
