@@ -20,9 +20,9 @@ pipeline {
              def cells = row.split(',').eachWithIndex { cell, cellIndex ->
              tmpMap[headers[cellIndex]] = cell
            }
-           mapList << tmpMap
+           mapList.add(tmpMap)
            }
-          echo maplist
+          echo mapList
         }
       }
     }
