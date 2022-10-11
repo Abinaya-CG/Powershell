@@ -11,7 +11,7 @@ pipeline {
         
         script{
           def mapList=[]
-          def headers=[]
+          def headers=["oruorto"]
           def file = readFile "optim_mapping.csv"
           file.readLines().eachWithIndex { row, index ->
            if (index == 0) { 
