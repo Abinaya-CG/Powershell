@@ -21,9 +21,9 @@ pipeline {
             for(String item:fields){
               array[i][j]=item
               println arr
-              j++
+              j=j+1
             }
-            i++
+            i=i+1
           }
           int total = rows.size()
           echo "$total"
