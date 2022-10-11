@@ -12,7 +12,7 @@ pipeline {
         script{
           def file = readFile "optim_mapping.csv"
           def rows = file.readLines()
-          rows.each {line, count ->
+          rows.eachLine {line, count ->
             def fields=line.split(',')
             for(String item:fields){
               println item
