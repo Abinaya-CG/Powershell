@@ -1,4 +1,3 @@
-script {
           def mapList=[]
           def headers=[]
           def file = readFile "optim_mapping.csv"
@@ -17,7 +16,6 @@ script {
           echo "$mapList"
            
            }
-        }
 pipeline {
   agent  {
    node {
