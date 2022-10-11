@@ -1,15 +1,4 @@
-pipeline {
-  agent  {
-   node {
-        label 'optim' 
-       }
-  }
-  stages {
-    stage('version') {
-      steps {
-        powershell '$PSVersionTable.PSVersion'
-        
-        script{
+script {
           def mapList=[]
           def headers=[]
           def file = readFile "optim_mapping.csv"
@@ -29,6 +18,16 @@ pipeline {
            
            }
         }
+pipeline {
+  agent  {
+   node {
+        label 'optim' 
+       }
+  }
+  stages {
+    stage('version') {
+      steps {
+        powershell '$PSVersionTable.PSVersion'
       }
     }
     stage('hello') {
