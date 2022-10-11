@@ -14,13 +14,13 @@ pipeline {
           def rows = file.readLines()
           println rows[0]
           int total = rows.size()
-          def array = [][]
+          def array = [[][]]
           int i=0
           rows.each  {line ->
             int j=0
             def fields=line.split(',')
             for(String item:fields){
-             String array[i][j]=item
+              array.get(2).set(j,item)
               j=j+1
             }
             i=i+1
