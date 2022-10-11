@@ -15,12 +15,11 @@ pipeline {
           def file = readFile "optim_mapping.csv"
           file.readLines().eachWithIndex { row, index ->
            if (index == 0) { 
-             def (headers[0],headers[1],headers[2],headers[3],headers[4]) = row.split(',')
+             headers = row.split(',')
            }
            else {
              def tmpMap = [:]
              def cells = row.split(',').eachWithIndex { cell, cellIndex ->
-             echo cellIndex
              tmpMap[headers[cellIndex]] = cell
            }
            mapList << tmpMap
