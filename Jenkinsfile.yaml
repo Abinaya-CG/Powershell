@@ -20,8 +20,10 @@ pipeline {
             def fields=line.split(',')
             for(String item:fields){
               arr[i][j]=item
-              println arr
+              println arr[i][j]
+              j++
             }
+            i++
           }
           int total = rows.size()
           echo "$total"
