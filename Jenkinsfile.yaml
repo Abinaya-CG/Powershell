@@ -11,7 +11,7 @@ pipeline {
         
         script{
           def file = readFile "optim_mapping.csv"
-          def arr=[]
+          def arr=[][]
           def rows = file.readLines()
           println rows[0]
           int i=0
@@ -20,7 +20,7 @@ pipeline {
             def fields=line.split(',')
             for(String item:fields){
               arr[i][j]=item
-              println arr[i][j]
+              println arr
               j++
             }
             i++
