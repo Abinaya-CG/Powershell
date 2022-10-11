@@ -16,8 +16,10 @@ pipeline {
           file.readLines().eachWithIndex { row, index ->
            if (index == 0) { 
              echo index
-             headers= row.split(',') as List
-             echo headers
+             def hdr= row.split(',')
+             for(String values:hdr){
+               headers+=hdr               
+             }
            }
            else {
              def tmpMap = [:]
