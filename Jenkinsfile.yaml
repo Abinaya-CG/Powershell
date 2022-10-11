@@ -13,10 +13,6 @@ pipeline {
           def file = readFile "optim_mapping.csv"
           def rows = file.readLines()
           int total = rows.size()
-          Set Apps = rows.collect { it[1] + ' ' + it[2] }
-          Set Jobname = rows.getAt(3)
-          Set Scriptpath = rows.getAt(4)
-          String result = "Across $total stages, ${Apps.size()} riders from " + "${Jobname.size()} teams and ${Scriptpath.size()} countries won stages."
           echo $total
         }
       }
