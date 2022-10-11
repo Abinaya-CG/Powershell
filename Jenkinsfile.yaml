@@ -23,7 +23,7 @@ pipeline {
            else {
              def tmpMap = [:]
              def cells = row.split(',').eachWithIndex { cell, cellIndex ->
-             tmpMap[headers[cellIndex]] = cell
+             echo cell
            }
            mapList << tmpMap
            }
