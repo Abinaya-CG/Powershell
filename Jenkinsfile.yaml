@@ -16,7 +16,7 @@ pipeline {
             def fields=line.split(',')
             for(String item:fields){
               println item
-              println "count"+ count
+              println "count"+ ${count}
               
             }
           }
