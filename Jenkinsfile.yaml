@@ -19,9 +19,9 @@ pipeline {
            }
            
            }
+           echo headers
         }
       }
-    }
     }
     stage('hello') {
       steps {
