@@ -19,7 +19,7 @@ pipeline {
             int j=0
             def fields=line.split(',')
             for(String item:fields){
-              arr[i][j]=item
+              def arr[i][j]=item
               println arr
               j++
             }
