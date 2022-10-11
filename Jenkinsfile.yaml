@@ -1,3 +1,4 @@
+script{
           def mapList=[]
           def headers=[]
           def file = readFile "optim_mapping.csv"
@@ -34,4 +35,5 @@ pipeline {
       }
     }
   }
+}
 }
