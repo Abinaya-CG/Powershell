@@ -20,7 +20,7 @@ pipeline {
             int j=0
             def fields=line.split(',')
             for(String item:fields){
-              array.get(i).set(j,item)
+              array[i][] << item
               j=j+1
             }
             i=i+1
