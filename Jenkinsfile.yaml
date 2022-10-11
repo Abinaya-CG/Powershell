@@ -13,7 +13,7 @@ pipeline {
           def mapList=[]
           def headers=[]
           def file = readFile "optim_mapping.csv"
-          def rows = file.readLines().eachWithIndex { row, rowIndex ->
+          file.readLines().eachWithIndex { row, rowIndex ->
            if (rowIndex == 0) { headers = row.split(',') }
            else {
              def tmpMap = [:]
