@@ -17,14 +17,8 @@ pipeline {
            if (index == 0) { 
              headers = row.split(',')
            }
-           else {
-             def tmpMap = [:]
-             def cells = row.split(',').eachWithIndex { cell, cellIndex ->
-             tmpMap[headers[cellIndex]] = cell
+           
            }
-           mapList << tmpMap
-           }
-          echo mapList
         }
       }
     }
