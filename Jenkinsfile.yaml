@@ -17,7 +17,7 @@ pipeline {
             def fields=line.split(',')
             for(String item:fields){
               println item   
-              println fields[]
+              println fields[0]
             }
           }
           int total = rows.size()
