@@ -14,7 +14,7 @@ pipeline {
           def rows = file.readLines()
           println rows[0]
           int total = rows.size()
-          String[] array = new String[total]
+          def array = []
           int i=0
           rows.each  {line ->
             int j=0
