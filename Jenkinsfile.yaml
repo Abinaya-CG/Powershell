@@ -11,11 +11,12 @@ pipeline {
         
         script{
           def mapList=[]
+          def headers=[]
           def file = readFile "optim_mapping.csv"
           file.readLines().eachWithIndex { row, index ->
            if (index == 0) { 
-             String[] headers = row.tokenize(",")
-             println headers
+             headers = row.tokenize(",")
+             echo "$headers"
            }
            
            }
