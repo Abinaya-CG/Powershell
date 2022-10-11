@@ -15,7 +15,7 @@ pipeline {
           def file = readFile "optim_mapping.csv"
           file.readLines().eachWithIndex { row, index ->
            if (index == 0) { 
-             headers[] = row.split(',') as List
+             headers[] << row.split(',') as List
              echo headers
            }
            else {
