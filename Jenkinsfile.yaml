@@ -25,7 +25,7 @@ pipeline {
            }
            mapList.add(tmpMap)
            }
-          echo "$maplist"
+          echo "$mapList"
            
            }
         }
