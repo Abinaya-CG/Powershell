@@ -17,7 +17,7 @@ pipeline {
           Set Jobname = rows.getAt(3)
           Set Scriptpath = rows.getAt(4)
           String result = "Across $total stages, ${Apps.size()} riders from " + "${Jobname.size()} teams and ${Scriptpath.size()} countries won stages."
-          echo $result
+          echo $total
         }
       }
     }
