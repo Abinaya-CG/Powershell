@@ -11,9 +11,10 @@ pipeline {
         
         script{
           def file = readFile "optim_mapping.csv"
-          def array = []
           def rows = file.readLines()
           println rows[0]
+          int total = rows.size()
+          def array = [total][]
           int i=0
           rows.each  {line ->
             int j=0
@@ -24,7 +25,6 @@ pipeline {
             }
             i=i+1
           }
-          int total = rows.size()
           echo "$total"
         }
       }
