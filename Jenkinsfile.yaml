@@ -29,8 +29,7 @@ pipeline {
            }
        }
     parameters{
-        [$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT',   name: 'mapList[header[0]]', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: false, script: 'return ["ERROR"]'], script: [classpath: [], sandbox: false,
-        script:  categories]]]
+        [$class: 'ChoiceParameter', choiceType: 'PT_SINGLE_SELECT',   name: 'mapList[header[0]]', script: [$class: 'GroovyScript', fallbackScript: [classpath: [], sandbox: false, script: 'return ["ERROR"]'], script: [classpath: [], sandbox: false, script:  categories]]]
         }
       }
     }
