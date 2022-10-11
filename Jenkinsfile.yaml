@@ -13,12 +13,11 @@ pipeline {
           def file = readFile "optim_mapping.csv"
           def rows = file.readLines()
           println rows[0]
-          rows.each  {line, count ->
+          rows.each  {line ->
             def fields=line.split(',')
             for(String item:fields){
-              println item
-              println "count"+ "${count}"
-              
+              println item   
+              println fields[]
             }
           }
           int total = rows.size()
