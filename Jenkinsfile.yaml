@@ -1,5 +1,5 @@
 Map getmapList(){
-def mapList=[]
+def mapList=[:]
 def headers=[]
 def file = readFile "optim_mapping.csv"
 file.readLines().eachWithIndex { row, index ->
