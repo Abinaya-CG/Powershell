@@ -1,15 +1,22 @@
-
-pipeline {
-  agent  {
-   node {
-        label 'optim' 
-       }
-  }
-  stages {
-    stage('version') {
-      steps {
-        script{
-          properties([
+def getmapList(){
+def mapList=[]
+def headers=[]
+def file = readFile "optim_mapping.csv"
+file.readLines().eachWithIndex { row, index ->
+if (index == 0) { 
+             headers = row.tokenize(",")
+           }
+           else {
+             def tmpMap = [:]
+             def cells = row.split(',').eachWithIndex { cell, cellIndex ->
+             tmpMap[headers[cellIndex]] = cell
+           }
+           mapList.add(tmpMap)
+           }
+}
+return mapList
+}
+properties([
                             parameters([
                                 [$class: 'ChoiceParameter', 
                                     choiceType: 'PT_SINGLE_SELECT', 
@@ -28,29 +35,24 @@ pipeline {
                                         script: [
                                             classpath: [], 
                                             sandbox: false, 
-                                            script:'''
-                                                    def mapList=[]
-                                                    def headers=[]
-                                                    def file = readFile "optim_mapping.csv"
-                                                    file.readLines().eachWithIndex { row, index ->
-                                                     if (index == 0) { 
-                                                       headers = row.tokenize(",")
-                                                    }
-                                                    else {
-                                                      def tmpMap = [:]
-                                                      def cells = row.split(',').eachWithIndex { cell, cellIndex ->
-                                                      tmpMap[headers[cellIndex]] = cell
-                                                    }
-                                                    mapList.add(tmpMap)
-                                                 }
-                                                }
-                                                return mapList[Server]
-                                                '''.stripIndent().trim()
+                                            script: 
+                                                "return []"
                                         ]
                                     ]
                                 ]
                                 ])
            ])
+pipeline {
+  agent  {
+   node {
+        label 'optim' 
+       }
+  }
+  stages {
+    stage('version') {
+      steps {
+        script{
+          
           echo "{$Env}"
         }
       }
