@@ -1,4 +1,4 @@
-Map getmapList(){
+def getmapList(){
 def mapList=[]
 def headers=[]
 def file = readFile "optim_mapping.csv"
@@ -46,8 +46,10 @@ pipeline {
                                         script: [
                                             classpath: [], 
                                             sandbox: false, 
-                                            script:
-                                                "return ['ddgdg']"
+                                            script:'''
+                                                def result=getmapList()
+                                                "return [result."Server"]"
+                                                '''
                                         ]
                                     ]
                                 ]
