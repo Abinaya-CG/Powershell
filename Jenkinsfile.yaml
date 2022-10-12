@@ -15,7 +15,7 @@ if (index == 0) {
            mapList.add(tmpMap)
            }
 }
-return mapList.find{it.key=="Application"}
+echo "$mapList.find{it.key=="Application"}.value"
 }
 pipeline {
   agent  {
