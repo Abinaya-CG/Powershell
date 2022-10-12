@@ -47,8 +47,8 @@ pipeline {
                                             classpath: [], 
                                             sandbox: false, 
                                             script:'''
-                                                def result=getmapList()
-                                                "return [result."Server"]"
+                                                List result=getmapList()
+                                                "return [result.Server]"
                                                 '''
                                         ]
                                     ]
