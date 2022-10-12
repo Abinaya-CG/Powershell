@@ -46,9 +46,8 @@ pipeline {
                                         script: [
                                             classpath: [], 
                                             sandbox: false, 
-                                            script:"""
-                                            return ["${getmapList()}","kjdkjk"]
-                                            """.stripIndent()
+                                            script:
+                                                "return ["${getmapList()}","kjdkjk"]"
                                         ]
                                     ]
                                 ]
