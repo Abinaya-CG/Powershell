@@ -16,8 +16,14 @@ if (index == 0) {
 }
 return mapList
 }
-properties([
-                            parameters([
+
+pipeline {
+  agent  {
+   node {
+        label 'optim' 
+       }
+  }
+ parameters {
                                 [$class: 'ChoiceParameter', 
                                     choiceType: 'PT_SINGLE_SELECT', 
                                     description: 'Select the Application from the Dropdown List', 
@@ -36,18 +42,11 @@ properties([
                                             classpath: [], 
                                             sandbox: false, 
                                             script: 
-                                                "return []"
+                                                "return ['skdjksjdkdj']"
                                         ]
                                     ]
                                 ]
-                                ])
-           ])
-pipeline {
-  agent  {
-   node {
-        label 'optim' 
-       }
-  }
+    }
   stages {
     stage('version') {
       steps {
