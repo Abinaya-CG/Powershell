@@ -28,7 +28,7 @@ pipeline {
                                         script: [
                                             classpath: [], 
                                             sandbox: false, 
-                                            script:"""
+                                            script:'''
                                                     def mapList=[]
                                                     def headers=[]
                                                     def file = readFile "optim_mapping.csv"
@@ -44,8 +44,8 @@ pipeline {
                                                     mapList.add(tmpMap)
                                                  }
                                                 }
-                                                return mapList.Server
-                                                """
+                                                "return [mapList.Server]"
+                                                '''
                                         ]
                                     ]
                                 ]
