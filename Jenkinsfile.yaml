@@ -28,7 +28,6 @@ pipeline {
       steps {
         script{
           list result=getmapList()
-          echo "$result"
         }
       }
     }
