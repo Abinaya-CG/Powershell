@@ -37,7 +37,7 @@ properties([
                                             sandbox: false, 
                                             script:"""
                                                 List result= getmapList()
-                                                return [result]
+                                                return ['result']
                                                 """
                                         ]
                                     ]
