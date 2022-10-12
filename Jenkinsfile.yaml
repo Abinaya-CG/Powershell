@@ -47,9 +47,7 @@ pipeline {
                                             classpath: [], 
                                             sandbox: false, 
                                             script:"""
-                                            def result=getmapList()
-                                            List r=result."Server"
-                                            return [r]
+                                            return ["$getmapList()"]
                                             """.stripIndent()
                                         ]
                                     ]
