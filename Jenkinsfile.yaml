@@ -35,7 +35,6 @@ pipeline {
                                                     file.readLines().eachWithIndex { row, index ->
                                                      if (index == 0) { 
                                                        headers = row.tokenize(",")
-                                                       echo "$headers"
                                                     }
                                                     else {
                                                       def tmpMap = [:]
