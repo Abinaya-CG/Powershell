@@ -28,7 +28,7 @@ pipeline {
       steps {
         script{
           def result=getmapList()
-          echo result
+          echo "$result"
         }
       }
     }
