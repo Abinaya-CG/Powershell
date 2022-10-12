@@ -15,7 +15,8 @@ if (index == 0) {
            mapList.add(tmpMap)
            }
 }
-echo "$mapList.{"Application"}"
+def r=mapList.{"Application"}
+echo "$r"
 }
 pipeline {
   agent  {
