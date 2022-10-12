@@ -27,7 +27,7 @@ pipeline {
     stage('version') {
       steps {
         script{
-          def result=$getmapList()
+          def result=getmapList()
           echo result
         }
       }
