@@ -28,7 +28,7 @@ pipeline {
       steps {
         script{
           List result=getmapList()
-          List r=result["Application"]
+          List r=result."Application"
           echo "$r"
         }
       }
