@@ -4,9 +4,6 @@ pipeline {
         label 'optim' 
        }
   }
-  parameters {
-        choice(name: 'ENVIRONMENT', choices: "${environments}")
-    }
   stages {
     stage('version') {
       steps {
