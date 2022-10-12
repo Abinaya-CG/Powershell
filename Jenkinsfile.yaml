@@ -27,9 +27,6 @@ pipeline {
     stage('version') {
       steps {
         script{
-          def result=getmapList()
-          List r=result."Server"
-          echo "$r"
           properties([
                             parameters([
                                 [$class: 'ChoiceParameter', 
@@ -50,6 +47,8 @@ pipeline {
                                             classpath: [], 
                                             sandbox: false, 
                                             script:"""
+                                            def result=getmapList()
+                                            List r=result."Server"
                                             return [r]
                                             """.stripIndent()
                                         ]
