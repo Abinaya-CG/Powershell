@@ -15,7 +15,7 @@ if (index == 0) {
            mapList.add(tmpMap)
            }
 }
-return mapList.Application
+return mapList.headers[0]
 }
 pipeline {
   agent  {
