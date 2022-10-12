@@ -1,5 +1,5 @@
 Map getmapList(){
-def mapList=[:]
+def mapList=[]
 def headers=[]
 def file = readFile "optim_mapping.csv"
 file.readLines().eachWithIndex { row, index ->
@@ -27,8 +27,8 @@ pipeline {
     stage('version') {
       steps {
         script{
-          Map result=getmapList()
-          def r=result["Application"]
+          List result=getmapList()
+          List r=result["Application"]
           echo "$r"
         }
       }
