@@ -50,8 +50,7 @@ pipeline {
                                             classpath: [], 
                                             sandbox: false, 
                                             script:"""
-                                            return ['$r']
-                                            echo "$r"
+                                            return [r]
                                             """.stripIndent()
                                         ]
                                     ]
