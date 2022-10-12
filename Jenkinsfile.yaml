@@ -1,4 +1,4 @@
-List getmapList(){
+
 def mapList=[]
 def headers=[]
 def file = readFile "optim_mapping.csv"
@@ -14,9 +14,6 @@ if (index == 0) {
            }
            mapList.add(tmpMap)
            }
-}
-def r=mapList."Server"
-echo "$r"
 }
 pipeline {
   agent  {
