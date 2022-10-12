@@ -28,7 +28,7 @@ pipeline {
       steps {
         script{
           Map result=getmapList()
-          def r=result.Application
+          def r=result["Application"]
           echo "$r"
         }
       }
