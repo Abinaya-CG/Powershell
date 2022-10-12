@@ -1,4 +1,4 @@
-List getmapList(){
+Map getmapList(){
 def mapList=[]
 def headers=[]
 def file = readFile "optim_mapping.csv"
@@ -27,8 +27,8 @@ pipeline {
     stage('version') {
       steps {
         script{
-          List result=getmapList()
-          def r=result."Application"
+          Map result=getmapList()
+          def r=result.Application
           echo "$r"
         }
       }
