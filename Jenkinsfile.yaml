@@ -49,8 +49,9 @@ pipeline {
                                         script: [
                                             classpath: [], 
                                             sandbox: false, 
-                                            script: 
-                                                "return $r"
+                                            script:"""
+                                            return $r
+                                            """.stripIndent()
                                         ]
                                     ]
                                 ]
