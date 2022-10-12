@@ -44,8 +44,8 @@ pipeline {
                                                     mapList.add(tmpMap)
                                                  }
                                                 }
-                                                "return [mapList.Server]"
-                                                '''
+                                                return mapList[Server]
+                                                '''.stripIndent().trim()
                                         ]
                                     ]
                                 ]
