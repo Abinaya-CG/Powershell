@@ -47,7 +47,7 @@ pipeline {
                                             classpath: [], 
                                             sandbox: false, 
                                             script:
-                                                "return ['getmapList()','kjdkjk']"
+                                                "return ['kjdkjk']"
                                         ]
                                     ]
                                 ]
