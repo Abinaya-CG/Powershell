@@ -33,7 +33,7 @@ properties([
            }
            mapList.add(tmpMap)
            }
-          echo "$mapList" '''
+          return [mapList[Application[]]] '''
                 ]
             ]
         ], 
