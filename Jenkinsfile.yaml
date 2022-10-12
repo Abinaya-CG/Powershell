@@ -1,18 +1,9 @@
-pipeline {
-  agent  {
-   node {
-        label 'optim' 
-       }
-  }
-  stages {
-    stage('version') {
-      steps {
-        script {
-          def mapList=[]
-          def headers=[]
-          def file = readFile "optim_mapping.csv"
-          file.readLines().eachWithIndex { row, index ->
-           if (index == 0) { 
+def getmapList(){
+def mapList=[]
+def headers=[]
+def file = readFile "optim_mapping.csv"
+file.readLines().eachWithIndex { row, index ->
+if (index == 0) { 
              headers = row.tokenize(",")
              echo "$headers"
            }
@@ -23,10 +14,19 @@ pipeline {
            }
            mapList.add(tmpMap)
            }
-          echo "$mapList"
-           
-           }
+}
+return mapList[]
+}
+pipeline {
+  agent  {
+   node {
+        label 'optim' 
        }
+  }
+  stages {
+    stage('version') {
+      steps {
+        echo "$getmapList()"      
       }
     }
     stage('hello') {
