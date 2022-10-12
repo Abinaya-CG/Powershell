@@ -28,7 +28,8 @@ pipeline {
       steps {
         script{
           List result=getmapList()
-          echo "$result"
+          def r=result."Application"
+          echo "$r"
         }
       }
     }
