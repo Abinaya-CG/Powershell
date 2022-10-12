@@ -50,7 +50,7 @@ pipeline {
                                             classpath: [], 
                                             sandbox: false, 
                                             script: 
-                                                "return [result."Server"]"
+                                                "return ['result.Server']"
                                         ]
                                     ]
                                 ]
