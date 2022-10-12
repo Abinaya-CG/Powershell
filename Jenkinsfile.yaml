@@ -35,8 +35,25 @@ properties([
                                         script: [
                                             classpath: [], 
                                             sandbox: false, 
-                                            script:
-                                                "return [getmapList()]"
+                                            script:'''
+                                            def mapList=[]
+def headers=[]
+def file = readFile "optim_mapping.csv"
+file.readLines().eachWithIndex { row, index ->
+if (index == 0) { 
+             headers = row.tokenize(",")
+           }
+           else {
+             def tmpMap = [:]
+             def cells = row.split(',').eachWithIndex { cell, cellIndex ->
+             tmpMap[headers[cellIndex]] = cell
+           }
+           mapList.add(tmpMap)
+           }
+}
+return mapList
+'''
+                                                
                                         ]
                                     ]
                                 ]
