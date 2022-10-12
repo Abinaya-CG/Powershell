@@ -1,22 +1,4 @@
-def getmapList(){
-def mapList=[]
-def headers=[]
-def file = readFile "optim_mapping.csv"
-file.readLines().eachWithIndex { row, index ->
-if (index == 0) { 
-             headers = row.tokenize(",")
-             echo "$headers"
-           }
-           else {
-             def tmpMap = [:]
-             def cells = row.split(',').eachWithIndex { cell, cellIndex ->
-             tmpMap[headers[cellIndex]] = cell
-           }
-           mapList.add(tmpMap)
-           }
-}
-return mapList
-}
+
 pipeline {
   agent  {
    node {
@@ -46,10 +28,25 @@ pipeline {
                                         script: [
                                             classpath: [], 
                                             sandbox: false, 
-                                            script:'''
-                                                List result=getmapList()
-                                                "return [result.Server]"
-                                                '''
+                                            script:"""
+                                                    def mapList=[]
+                                                    def headers=[]
+                                                    def file = readFile "optim_mapping.csv"
+                                                    file.readLines().eachWithIndex { row, index ->
+                                                     if (index == 0) { 
+                                                       headers = row.tokenize(",")
+                                                       echo "$headers"
+                                                    }
+                                                    else {
+                                                      def tmpMap = [:]
+                                                      def cells = row.split(',').eachWithIndex { cell, cellIndex ->
+                                                      tmpMap[headers[cellIndex]] = cell
+                                                    }
+                                                    mapList.add(tmpMap)
+                                                 }
+                                                }
+                                                return mapList."Server"
+                                                """
                                         ]
                                     ]
                                 ]
