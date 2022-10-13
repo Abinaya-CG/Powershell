@@ -10,7 +10,7 @@ pipeline {
         script{
           
           echo "${params.Application}"
-          echo "${params.JobName}"
+          echo "${params.JobName[]}"
         }
       }
     }
