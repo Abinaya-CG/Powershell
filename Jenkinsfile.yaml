@@ -8,16 +8,16 @@ pipeline {
     stage('version') {
       steps {
         script{
-          
-          echo "${params.Application}"
-          echo "${params.JobName[]}"
+          powershell $PSVersionTable
         }
       }
     }
     stage('hello') {
       steps {
-        powershell 'Write-Output "HI!!"'
+        script{
+        powershell $ScriptPath -Appname -SchemaName -JobName -Path
       }
     }
   }
+}
 }
