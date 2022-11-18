@@ -15,7 +15,7 @@ pipeline {
     stage('hello') {
       steps {
         script{
-        powershell $ScriptPath -Appname -SchemaName -JobName -Path
+        powershell $<<ScriptPath for the trigger script>> -Appname -SchemaName -JobName -Path
       }
     }
   }
