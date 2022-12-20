@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "5e6219d8-28cb-42e6-b252-42868fd7dd80",
+		"name": "Gremlin scenario",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20172962"
+	},
+	"item": [
+		{
+			"name": "Scenario-Test",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer Yy0wYmY0MTYwMy05OGI3LTU0M2ItYjI1OS1jN2U0YjAwZjY3NmM6dGVzdGVyLmFtaW5AZ21haWwuY29tOmVkYzVjNGJjLTNkMDItNDNjOC04NWM0LWJjM2QwMmIzYzg5Nw==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"command\": { \"type\": \"cpu\", \"args\": [\"-c\", \"1\", \"--length\", \"30\"] },\r\n        \"target\": { \"type\": \"Random\" }\r\n    }"
+				},
+				"url": {
+					"raw": "https://api.gremlin.com/v1/scenarios/b911a363-4efe-4030-91a3-634efeb0306b/runs?teamId=3a191e1c-410b-5e91-825f-5705dc6ae209",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gremlin",
+						"com"
+					],
+					"path": [
+						"v1",
+						"scenarios",
+						"b911a363-4efe-4030-91a3-634efeb0306b",
+						"runs"
+					],
+					"query": [
+						{
+							"key": "teamId",
+							"value": "3a191e1c-410b-5e91-825f-5705dc6ae209"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
